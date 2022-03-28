@@ -23,6 +23,10 @@ export class AppComponent implements OnInit {
           $("#showlists").append("<div><li>" + userInput + " " + btn + " " + completed + "</li></div>");
           console.log(userInput)
       });
+
+        $("#showlists").on("click", ".listdelete", function() {
+            $(this).parent().remove();
+        });
     });
 
   }
