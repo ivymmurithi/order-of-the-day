@@ -1,6 +1,6 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
-declare var addList: any;
+declare var $: any;
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,19 @@ declare var addList: any;
 export class AppComponent implements OnInit {
 
   ngOnInit(): void {
-    new addList()
+
+  $(document).ready(function() {
+    $("#addBtn").click(function(event:any) {
+      event.preventDefault();
+        let userInput = $('#todoInput').val();
+          $('#todoInput').val('');
+        let btn = `<button class="btn btn-outline-dark listdelete"><i class="fa fa-solid fa-trash"></i></button>`;
+        let completed =`<button class="btn btn-outline-dark listcomplete"><i class="fa fa-solid fa-check"></i></button>`;
+        let displayed = $("#showlists").append("<div><li>" + userInput + " " + btn + " " + completed + "</li></div>");
+        $('#showlists').html(displayed)
+        console.log(displayed)
+    });
+  });
 
   }
 

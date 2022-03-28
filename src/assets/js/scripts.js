@@ -1,3 +1,0 @@
-function addList() {
-    alert('hello!!')
-}
