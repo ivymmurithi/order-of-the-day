@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <form action="">
-    <input class="form-control form-control-lg userform" name="todoInput" id="todoInput" type="text" placeholder="Add your Todo List..."
+    <input class="form-control form-control-lg userform" name="todoInput" #todoInput type="text" placeholder="Add your Todo List..."
       aria-label=".form-control-lg example">
-      <button type="submit" id="addBtn" class="btn btn-outline-dark"><i class="fa fa-solid fa-plus"></i></button>
+      <button type="submit" (click)="postedTodos(todoInput.value);" id="addBtn" class="btn btn-outline-dark"><i class="fa fa-solid fa-plus"></i></button>
       <button type="submit" id="deleteBtn" class="btn btn-outline-dark"><i class="fa fa-solid fa-trash"></i></button>
   </form>
 

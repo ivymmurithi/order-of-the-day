@@ -2,6 +2,7 @@ import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 declare var $: any;
 import { ApiService } from './api.service';
+import { Post } from './post';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,20 @@ export class AppComponent implements OnInit {
     .subscribe((data:any) => {
       this.todos = data;
       console.log(data);
+    });
+  }
+
+  postedTodos(addedTodo:any) {
+    const data = {
+      todo: addedTodo,
+      done: false
+    } 
+    console.log(addedTodo)
+    this.apiService.postTodos(data)
+    .subscribe((response:any) => {
+      console.log(response);
+      this.todos.push(response);
+        
     });
   }
 
