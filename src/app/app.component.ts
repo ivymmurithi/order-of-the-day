@@ -23,13 +23,14 @@ export class AppComponent implements OnInit {
   showTodos() {
     this.apiService.getTodos()
     .subscribe((data:any) => {
-      this.todos.push(data);
-      // this.todos = data;
+      this.todos = data;
       console.log(data);
     });
   }
 
   ngOnInit(): void {
+
+    this.showTodos();
 
     $(document).ready(function() {
       $("#addBtn").click(function(event:any) {
