@@ -1,6 +1,7 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 declare var $: any;
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,23 @@ declare var $: any;
 
 export class AppComponent implements OnInit {
 
+  // Because the service method returns an 
+  // Observable of configuration data, the 
+  // component subscribes to the method's 
+  // return value. 
+
+  public todos:any[]=[];
+
+  constructor(private apiService: ApiService) {}
+
+  showTodos() {
+    this.apiService.getTodos()
+    .subscribe((data:any) => {
+      this.todos.push(data);
+      // this.todos = data;
+      console.log(data);
+    });
+  }
 
   ngOnInit(): void {
 
