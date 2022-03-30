@@ -40,4 +40,15 @@ export class ApiService {
     return this.http.post<any>(this.baseUrl, JSON.stringify(addedTodo), this.httpOptions)
   }
 
+  // DELETE request
+  deleteTodos(id: number) {
+    console.log(`${this.baseUrl} ${id}`)
+    return this.http.delete(`${this.baseUrl}${id}/`,this.httpOptions)
+  }
+  
+  // PUT request
+  // updateTodos(toUpdate: any) {
+  //   return this.http.put<any>(`${this.baseUrl}/${toUpdate}`, toUpdate, this.httpOptions)
+  // }
+
 }

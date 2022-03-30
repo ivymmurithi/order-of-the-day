@@ -15,8 +15,8 @@
 
   <div class="api-todos">
     <ul id="api-list" *ngFor="let todo of todos">
-      <li>{{todo.todo}} 
-        <button type="submit" id="deleteBtn" class="btn btn-outline-dark">
+      <li id="{{todo.id}}">{{todo.todo}} {{todo.id}} 
+        <button type="submit" (click)="deletedTodos(todo.id)" id="deleteBtn" class="btn btn-outline-dark">
           <i class="fa fa-solid fa-trash"></i></button>
         <button type="submit" class="btn btn-outline-dark">
           <i class="fa fa-solid fa-pencil"></i></button>
