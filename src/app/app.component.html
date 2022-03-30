@@ -14,11 +14,13 @@
   </div>
 
   <div class="api-todos">
-    <ul id="api-list" *ngFor="let todo of todos">{{todo.todo}} 
-      <button type="submit" id="deleteBtn" class="btn btn-outline-dark">
-        <i class="fa fa-solid fa-trash"></i></button>
-      <button type="submit" class="btn btn-outline-dark">
-        <i class="fa fa-solid fa-pencil"></i></button>
+    <ul id="api-list" *ngFor="let todo of todos">
+      <li>{{todo.todo}} 
+        <button type="submit" id="deleteBtn" class="btn btn-outline-dark">
+          <i class="fa fa-solid fa-trash"></i></button>
+        <button type="submit" class="btn btn-outline-dark">
+          <i class="fa fa-solid fa-pencil"></i></button>
+      </li>
     </ul>
   
   </div>
