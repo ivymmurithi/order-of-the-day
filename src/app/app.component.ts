@@ -48,24 +48,17 @@ export class AppComponent implements OnInit {
     .subscribe();
   }
 
-  // updatedTodo(todoId: number) {
-  //   // let todoId = [];
-  //   // for (let i = 0, len = this.todos.length; i < len; i++) {
-  //   //   todoId[this.todos[i].id] = this.todos[i];
-  //   // }
-  //   // console.log(todoId)
-
-  //   const data = {
-  //     id: todoId,
-  //     todo: 'hallo'
-  //   }
-  //   console.log(data)
-  //   this.apiService.updateTodos(data)
-  //   .subscribe((response:any) => {
-  //     console.log(response);
-  //     this.todos.push(response);
-  //   });
-  // }
+  updatedTodo(todoId: number) {
+    const data = {
+      todo: 'hallo'
+    }
+    console.log(data)
+    this.apiService.updateTodos(todoId, data)
+    .subscribe((response:any) => {
+      console.log(response);
+      this.todos.push(response);
+    });
+  }
 
   ngOnInit(): void {
 

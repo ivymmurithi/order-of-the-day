@@ -47,8 +47,8 @@ export class ApiService {
   }
   
   // PUT request
-  // updateTodos(toUpdate: any) {
-  //   return this.http.put<any>(`${this.baseUrl}/${toUpdate}`, toUpdate, this.httpOptions)
-  // }
+  updateTodos(id: number, updateword: any) {
+    return this.http.put<any>(`${this.baseUrl}${id}/`, updateword, this.httpOptions)
+  }
 
 }

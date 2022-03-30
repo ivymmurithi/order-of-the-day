@@ -18,7 +18,7 @@
       <li id="{{todo.id}}">{{todo.todo}} {{todo.id}} 
         <button type="submit" (click)="deletedTodos(todo.id)" id="deleteBtn" class="btn btn-outline-dark">
           <i class="fa fa-solid fa-trash"></i></button>
-        <button type="submit" class="btn btn-outline-dark">
+        <button type="submit" (click)="updatedTodo(todo.id)" class="btn btn-outline-dark">
           <i class="fa fa-solid fa-pencil"></i></button>
       </li>
     </ul>
